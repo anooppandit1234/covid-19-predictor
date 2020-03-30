@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>TESTING OF COVID-19</title>
-    <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <h1>ENTER DETAILS HERE FOR CHECKING CORONAVIRUS TEST </h1>
-    <form>
-        NAME:<br>
-        <input type="text">
-        <br>
-        AGE:<br>
-        <input type="text"><br>
-        COUNTRY:<br>
-        <input type="text"><br><br>
-        <input type="radio">Male<br>
-        <input type="radio">Female<br>
-        <input type="radio">Other<br>
-        <h2>SELECT THE BELOW SYMPTOMS IF YOU HAVE</h2><br>
-        <input type="checkbox">Fever<br>
-        <input type="checkbox">Cough<br>
-        <input type="checkbox">Difficult in breathing<br>
-        <input type="checkbox">Continuous Sneezing<br><br>
-        <input type="submit">
-        
-        </form>
-    </body>
-</html>
+
+    <meta charset="UTF-8">
+    <title>COVID19 prediction</title>
+    
+    
+    
+</head>
+<body>
+    <div class="login">
+        <h1> Predictor</h1>
+            <form aciton="{{url_for('predict')}}" method = "post">
+			        AGE:<input type="text"><br><br>
+			        gender: type 0 for male and 1 for female
+			        <input type="text" ><br><br>
+			        <h2>SELECT THE BELOW SYMPTOMS IF YOU HAVE: for yes enter 1  and for no enter 0</h2><br>
+			        Fever:<input type="text" ><br>
+			        Cough:<input type="text"><br>
+			        Difficult in breathing:<input type="text"><br>
+			        Continuous Sneezing<input type="text"><br>
+			        Time of first of occurence(in days)<input type="text"><br>
+			        <button type="submit" class="btn btn-primary btn-block btn-large" >Predict</button>
+
+			</form>
+			<br>
+			<br>
+			{{ prediciton_text }}
+			<br>
+
+
+		</div>
+		</body>
+	</html>
