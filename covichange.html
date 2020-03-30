@@ -11,27 +11,23 @@
 <body>
     <div class="login">
         <h1> Predictor</h1>
-        <div class="formde">
-            <form>
-			        <h3>Age:</h3>
-			        <input class="inp" name="age" type="text" placeholder="Age"  type="text"><br>
-                <h2>
-			        Gender: type 0 for male and 1 for female<br> </h2>
-			        <input class="inp" name="gender" type="text" placeholder="Gender"><br>
-                   
-			        <h2>SELECT THE BELOW SYMPTOMS IF YOU HAVE: for yes enter 1  and for No enter 0</h2><br>
-			        <h3>Fever:</h3><input class="inp" name="fever"  placeholder="1/0" type="text" ><br>
-                <h3> Coughing:</h3><input class="inp" name="coughing"  placeholder="1/0" type="text"><br>
-			       <h3>  Diffculty in breathing:</h3><input class="inp" name="breathing"  placeholder="1/0"type="text"><br>
-			        <h3> Sneezing:</h3><input class="inp" name="sneezing" placeholder="1/0"type="text"><br>
-                    <h3> Time of first occurence(in days):</h3><input class ="inp" name="days" placeholder="Days" type ="text"><br><br>
-              <div class="but">
-			        <button type="submit"> Predict
-                   </button> 
-            </div>
-			</form>
-		</div>
-        </div>
+        <form action="{{ url_for('predict')}}"method="post">
+    		<input type="text" name="age" placeholder="Age" required="required" /><br>
+    		Enter 1 for female and 0 for male<br>
+        	<input type="text" name="gender" placeholder="Gender" required="required" />
+        	<br>Enter 1 if yes else 0 for no <br>
+		<input type="text" name="fever" placeholder="Fever" required="required" />
+		<input type="text" name="coughing" placeholder="Coughing" required="required" />
+		<input type="text" name="d" placeholder="Difficulty in breathing" required="required" />
+		<input type="text" name="s" placeholder="Sneezing" required="required" />
+		<input type="text" name="t" placeholder="Time of first occurence" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+	 </div>
              <div>
         <img src="download1.jpeg"  width="500px" height="200px"
         class="image">
